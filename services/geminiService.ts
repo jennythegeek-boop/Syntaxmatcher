@@ -85,7 +85,9 @@ export const translateAndAnalyze = async (
         throw new Error("No response from AI");
     }
     
-    return JSON.parse(jsonText) as TranslationResponse;
+    // Robustly parse JSON by stripping Markdown code blocks if they exist
+    const cleanedJson = jsonText.replace(/```json/g, '').replace(/```/g, '').trim();
+    return JSON.parse(cleanedJson) as TranslationResponse;
 
   } catch (error) {
     console.error("Gemini Translation Error:", error);
