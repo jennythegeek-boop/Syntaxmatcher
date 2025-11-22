@@ -1,0 +1,5 @@
+{
+  "name": "LinguaSync",
+  "description": "A visual translation tool for English, Italian, Danish, French, Korean, and Mandarin Chinese that highlights corresponding syntax and vocabulary across languages to aid learning and comparison.",
+  "requestFramePermissions": []
+}
